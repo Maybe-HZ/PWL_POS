@@ -58,14 +58,20 @@ class UserController extends Controller
         // $user = UserModel::firstWhere('level_id',1);
 
         // pengerjaan jobsheet 4 praktikum 2.1 bagian 8
-        $user = UserModel::findOr(1,['username','nama'],function(){
-            abort(404);
-        });
+        // $user = UserModel::findOr(1,['username','nama'],function(){
+        //     abort(404);
+        // });
 
         // pengerjaan jobsheet 4 praktikum 2.1 bagian 10
-        $user = UserModel::findOr(20,['username','nama'],function(){
-            abort(404);
-        });
+        // $user = UserModel::findOr(20,['username','nama'],function(){
+        //     abort(404);
+        // });
+
+        // pengerjaan jobsheet 4 praktikum 2.2 bagian 1
+        // $user = UserModel::findOrFail(1);
+
+        // pengerjaan jobsheet 4 praktikum 2.2 bagian 3
+        $user = UserModel::where('username','manager9')->firstOrFail();
 
         return view('user.user', ['data' => $user]);
     }
