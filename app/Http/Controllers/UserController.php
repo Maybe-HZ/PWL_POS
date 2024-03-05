@@ -74,8 +74,48 @@ class UserController extends Controller
         // $user = UserModel::where('username','manager9')->firstOrFail();
 
         // pengerjaan jobsheet 4 praktikum 2.3 bagian 1
-        $user = UserModel::where('level_id',2)->count();
-        dd($user);
+        // $user = UserModel::where('level_id',2)->count();
+        // dd($user);
+        // return view('user.user', ['data' => $user]);
+
+        // pengerjaan jobsheet 4 praktikum 2.4 bagian 1
+        // $user = UserModel::firstOrCreate(
+        //     [
+        //         'username' => 'manager',
+        //         'nama' => 'Manager'
+        //     ]
+        // );
+
+        // pengerjaan jobsheet 4 praktikum 2.4 bagian 4
+        // $user = UserModel::firstOrCreate(
+        //     [
+        //         'username' => 'manager22',
+        //         'nama' => 'Manager Dua Dua',
+        //         'password' => Hash::make('12345'),
+        //         'level_id' => 2,
+        //     ]
+        // );
+
+        // pengerjaan jobsheet 4 praktikum 2.4 bagian 6
+        // $user = UserModel::firstOrNew(
+        //     [
+        //         'username' => 'manager',
+        //         'nama' => 'Manager',
+        //     ]
+        // );
+
+        // pengerjaan jobsheet 4 praktikum 2.4 bagian 8
+        $user = UserModel::firstOrNew(
+            [
+                'username' => 'manager11',
+                'nama' => 'Manager Tiga Tiga',
+                'password' => Hash::make('12345'),
+                'level_id' => 2,
+            ]
+        );
+        // pengerjaan jobsheet 4 praktikum 2.4 bagian 10
+        $user->save();
+
         return view('user.user', ['data' => $user]);
     }
 }

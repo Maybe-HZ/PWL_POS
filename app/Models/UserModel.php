@@ -16,5 +16,8 @@ class UserModel extends Model
     // protected $fillable = ['level_id','username','nama','password'];
 
     // pengerjaan jobsheet 4 praktikum 1 bagian 4
-    protected $fillable = ['level_id','username','nama'];
+    // protected $fillable = ['level_id','username','nama'];
+
+    // pengerjaan jobsheet 4 praktikum 2.4 bagian 4 untuk bisa mengerjakan
+    protected $fillable = ['level_id','username','nama','password'];
 }
