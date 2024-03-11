@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class UserModel extends Model
 {
@@ -20,4 +21,10 @@ class UserModel extends Model
 
     // pengerjaan jobsheet 4 praktikum 2.4 bagian 4 untuk bisa mengerjakan
     protected $fillable = ['level_id','username','nama','password'];
+
+    // pengerjaan jobsheet 4 praktikum 2.7 bagian 1
+    public function level():BelongsTo
+    {
+        return $this->belongsTo(LevelModel::class, 'level_id', 'level_id');
+    }
 }

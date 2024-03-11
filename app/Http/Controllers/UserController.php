@@ -166,7 +166,13 @@ class UserController extends Controller
     // pengerjaan Jobsheet 4 Praktikum 2.6 bagian 3
     public function index()
     {
-        $user = UserModel::all();
+        // $user = UserModel::all();
+        // return view('user.user', ['data' => $user]);
+
+        // pengerjaan Jobsheet 4 praktikum 2.7 bagian 2
+        $user = UserModel::with('level')->get();
+        // dd($user);
+        // pengerjaan Jobsheet 4 praktikum 2.7 bagian 4
         return view('user.user', ['data' => $user]);
     }
 
@@ -196,7 +202,7 @@ class UserController extends Controller
     }
 
     // pengerjaan Jobsheet 4 praktikum 2.6 bagian 16
-    public function ubah_simpan($id,Request $request)
+    public function ubah_simpan($id, Request $request)
     {
         $user = UserModel::find($id);
 
