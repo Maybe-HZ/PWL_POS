@@ -15,7 +15,14 @@ Route::get('/', function () {
 // Jobsheet 3 Praktikum 4 bagian 2
 Route::get('/level', [LevelController::class, 'index']);
 // Jobsheet 3 Praktikum 5 bagian 2
-Route::get('/kategori', [KategoriController::class, 'index']);
+Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
+// Jobsheet 5 praktikum 2 bagian 1
+Route::get('/kategori/create',[KategoriController::class, 'create'])->name('kategori.create');
+Route::post('/kategori',[KategoriController::class, 'store'])->name('kategori.store');
+Route::get('/kategori/edit/{id}',[KategoriController::class, 'edit'])->name('kategori.edit');
+Route::put('/kategori/update/{id}',[KategoriController::class, 'update'])->name('kategori.update');
+Route::get('/kategori/delete/{id}',[KategoriController::class, 'delete'])->name('kategori.delete');
+
 // Jobsheet 3 Praktikum 6 bagian 4
 Route::get('/user', [UserController::class, 'index'])->name('/user');
 
