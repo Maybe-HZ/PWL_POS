@@ -296,6 +296,21 @@ return [
     'menu' => [
         // Navbar items:
         [
+            'text' => 'Kategori',
+            'route' => 'kategori',
+            'topnav' => true,
+        ],
+        [
+            'text' => 'level',
+            'route' => 'level',
+            'topnav' => true,
+        ],
+        [
+            'text' => 'user',
+            'route' => 'user',
+            'topnav' => true,
+        ],
+        [
             'type' => 'navbar-search',
             'text' => 'search',
             'topnav_right' => true,

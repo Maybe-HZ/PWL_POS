@@ -25,4 +25,29 @@ class LevelController extends Controller
         $data = DB::select('select * from m_level');
         return view('level.level', ['data' => $data]);
     }
+
+    public function create()
+    {
+        return view('level.level_tambah');
+    }
+
+    public function store(Request $request)
+    {
+        return 0;
+    }
+
+    public function edit($id)
+    {
+        return 0;
+    }
+
+    public function update(Request $request, $id)
+    {
+        return 0;
+    }
+
+    public function delete($id)
+    {
+        return 0;
+    }
 }

@@ -8,14 +8,14 @@
     @endif
 @stop
 
-@section('content_top_nav_left')
+{{-- @section('content_top_nav_left')
     <!-- Navbar -->
     <ul class="navbar-nav">
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{ route('kategori') }}" class="nav-link">Kategori</a>
         </li>
     </ul>
-@stop
+@stop --}}
 
 @section('')
     <p>p</p>

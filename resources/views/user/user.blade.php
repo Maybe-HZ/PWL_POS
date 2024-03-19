@@ -24,7 +24,7 @@
     </table> --}}
 
     {{-- pengerjaan jobsheet 4 praktikum 2.1 bagian 2 --}}
-    <a href="{{ route('/user/tambah') }}">Tambah User</a>
+    <a href="{{ route('user.tambah') }}">Tambah User</a>
     <table border="1" cellpadding="2" cellspacing="0">
         <tr>
             <td>ID</td>
@@ -48,7 +48,7 @@
                 <td>{{ $d->level->level_nama }}</td>
                 {{-- ----------------------------------- --}}
                 {{-- Jobsheet 4 praktikum 2.6 bagian 2 --}}
-                <td><a href="{{ route('/user/ubah', $d->user_id) }}">Ubah</a>|<a href="{{ route('/user/hapus', $d->user_id) }}">Hapus</a></td>
+                <td><a href="{{ route('user.ubah', $d->user_id) }}">Ubah</a>|<a href="{{ route('user.hapus', $d->user_id) }}">Hapus</a></td>
             </tr>
         @endforeach
     </table>
