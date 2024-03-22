@@ -12,15 +12,21 @@
             </div>
 
             <form method="post" action="{{ route('kategori.store') }}">
-                {{@csrf_field()}}
+                {{ @csrf_field() }}
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="kodeKategori">Kode Kategori</label>
-                        <input type="text" class="form-control" name="kategori_kode" placeholder="Masukkan Kode Kategori">
+                        <label for="kategori_kode">Kode Kategori</label>
+                        <input id="kategori_kode" type="text" class="@error('kategori_kode') is-invalid @enderror form-control"
+                            name="kategori_kode" placeholder="Masukkan Kode Kategori">
+
+                        @error('kategori_kode')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="namaKategori">Nama Kategori</label>
-                        <input type="text" class="form-control" name="kategori_nama" placeholder="Masukkan Nama Kategori">
+                        <input type="text" class="form-control" name="kategori_nama"
+                            placeholder="Masukkan Nama Kategori">
                     </div>
                 </div>
 
@@ -28,4 +34,14 @@
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </form>
-@endsection
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        @endsection

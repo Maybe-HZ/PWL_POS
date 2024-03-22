@@ -6,6 +6,7 @@ use App\Models\KategoriModel;
 use Illuminate\Http\Request;
 use App\DataTables\KategoriDataTable;
 use App\Models\UserModel;
+use Illuminate\Http\RedirectResponse;
 
 class KategoriController extends Controller
 {
@@ -43,12 +44,23 @@ class KategoriController extends Controller
         return view('kategori.create');
     }
 
-    public function store(Request $request)
+    // public function store(Request $request)
+    // {
+    //     KategoriModel::create([
+    //         'kategori_kode' => $request->kategori_kode,
+    //         'kategori_nama' => $request->kategori_nama,
+    //     ]);
+    //     return redirect('/kategori');
+    // }
+
+    // JS 6 B bagian 3
+    public function store(Request $request):RedirectResponse
     {
-        KategoriModel::create([
-            'kategori_kode' => $request->kategori_kode,
-            'kategori_nama' => $request->kategori_nama,
+        $validation = $request->validate([
+            'kategori_kode' => 'bail|required|unique:m_kategori|max:255',
+            'kategori_nama' => 'required',
         ]);
+
         return redirect('/kategori');
     }
 
@@ -75,4 +87,6 @@ class KategoriController extends Controller
         $data->delete();
         return redirect('/kategori');
     }
+
+
 }
