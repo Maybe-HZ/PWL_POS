@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePostRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\RedirectResponse;
 
 class LevelController extends Controller
 {
@@ -31,9 +33,13 @@ class LevelController extends Controller
         return view('level.level_tambah');
     }
 
-    public function store(Request $request)
+    public function store(StorePostRequest $request):RedirectResponse
     {
-        return 0;
+        $validated = $request->validated();
+        $validated = $request->safe()->only('level_kode', 'level_nama');
+        $validated = $request->safe()->except('level_kode', 'level_nama');
+
+        return redirect('/level');
     }
 
     public function edit($id)

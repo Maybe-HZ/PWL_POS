@@ -11,23 +11,40 @@
             <div class="card-header">
                 <h3 class="card-title">Create User</h3>
             </div>
-            <form>
+            <form method="post" action="{{ route('user.tambah_simpan') }}">
                 <div class="card-body">
+                    {{ @csrf_field() }}
                     <div class="form-group">
-                        <div class="form-group">
-                            <label for="nama">Nama</label>
-                            <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama">
-                        </div>
-                        <div class="form-group">
-                            <label for="level_id">Level ID</label>
-                            <input type="number" class="form-control" name="level_id" placeholder="Masukkan Level ID">
-                        </div>
+                        <label for="nama">Nama</label>
+                        <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"
+                            placeholder="Masukkan Nama">
+                        @error('nama')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="level_id">Level ID</label>
+                        <input type="number" class="form-control @error('level_id') is-invalid @enderror" name="level_id"
+                            placeholder="Masukkan Level ID">
+                        @error('level_id')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
                         <label for="username">Username</label>
-                        <input type="text" class="form-control" name="username" placeholder="Masukkan Username">
+                        <input type="text" class="form-control @error('username') is-invalid @enderror" name="username"
+                            placeholder="Masukkan Username">
+                        @error('username')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Masukkan Password">
+                        <input type="password" class="form-control @error('password') is-invalid @enderror" name="password"
+                            placeholder="Masukkan Password">
+                        @error('password')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="card-footer">

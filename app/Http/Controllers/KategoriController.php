@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\KategoriModel;
 use Illuminate\Http\Request;
 use App\DataTables\KategoriDataTable;
+use App\Http\Requests\StorePostRequest;
 use App\Models\UserModel;
 use Illuminate\Http\RedirectResponse;
 
@@ -54,12 +55,22 @@ class KategoriController extends Controller
     // }
 
     // JS 6 B bagian 3
-    public function store(Request $request):RedirectResponse
-    {
-        $validation = $request->validate([
-            'kategori_kode' => 'bail|required|unique:m_kategori|max:255',
-            'kategori_nama' => 'required',
-        ]);
+    // public function store(Request $request):RedirectResponse
+    // {
+    //     $validation = $request->validate([
+    //         'kategori_kode' => 'bail|required|unique:m_kategori|max:255',
+    //         'kategori_nama' => 'required',
+    //     ]);
+
+    //     return redirect('/kategori');
+    // }
+
+    // JS 6 B bagian 2
+    public function store(StorePostRequest $request): RedirectResponse{
+        $validated = $request->validated();
+
+        $validated = $request->safe()->only('kategori_kode', 'kategori_nama');
+        $validated = $request->safe()->except('kategori_kode', 'kategori_nama');
 
         return redirect('/kategori');
     }
