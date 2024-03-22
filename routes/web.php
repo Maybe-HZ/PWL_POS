@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\POSController;
 use App\Http\Controllers\UserController;
 
 
@@ -15,6 +16,8 @@ Route::get('/', function () {
     return view('welcomejs6a');
 });
 
+// JS 6 D bagian 2
+Route::resource('m_user', POSController::class);
 
 // Jobsheet 3 Praktikum 4 bagian 2
 Route::get('/level', [LevelController::class, 'index']) ->name('level');
