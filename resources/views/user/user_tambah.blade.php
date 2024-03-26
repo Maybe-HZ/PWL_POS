@@ -6,7 +6,7 @@
 @section('content_header_subtitle', 'Tambah')
 
 @section('content')
-    <div class="container">
+    <div class="container wrapper">
         <div class="card card-primary">
             <div class="card-header">
                 <h3 class="card-title">Create User</h3>
@@ -19,7 +19,7 @@
                         <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"
                             placeholder="Masukkan Nama">
                         @error('nama')
-                            <div class="alert alert-danger">{{ $message }}</div>
+                            <div class="alert alert-danger ">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group">

@@ -10,8 +10,8 @@
             <div class="card-header">
                 <h3 class="card-title">Buat Kategori Baru</h3>
             </div>
-            <div class="card-body">
-                <form method="post" action="{{ route('kategori.store') }}">
+            <form method="post" action="{{ route('kategori.store') }}">
+                <div class="card-body">
                     {{ @csrf_field() }}
                     <div class="form-group">
                         <label for="kategori_kode">Kode Kategori</label>
@@ -24,15 +24,19 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="namaKategori">Nama Kategori</label>
-                        <input type="text" class="form-control" name="kategori_nama"
+                        <label for="kategori_nama">Nama Kategori</label>
+                        <input type="text" class="@error('kategori_nama') is-invalid @enderror form-control" name="kategori_nama"
                             placeholder="Masukkan Nama Kategori">
+
+                        @error('kategori_nama')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
-                </form>
-            </div>
-            <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Simpan</button>
-            </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>

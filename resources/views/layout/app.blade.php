@@ -84,5 +84,9 @@
         .card-title {
             font-weight: 600;
         }
+
+        .form-group.is-invalid .card-body {
+            min-height: 200px;
+        }
     </style>
 @endpush
