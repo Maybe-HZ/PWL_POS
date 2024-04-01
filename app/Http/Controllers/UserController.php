@@ -251,10 +251,14 @@ class UserController extends Controller
         ];
         $activeMenu = 'user';
 
+        // JS 7 praktikum 4 bagian 1
+        $level = LevelModel::all();
+
         return view('user.index', [
             'breadcrumb' => $breadcrumb,
             'page' => $page,
-            'activeMenu' => $activeMenu
+            'activeMenu' => $activeMenu,
+            'level' => $level
         ]);
     }
     // Ambil data user dalam bentuk json untuk datatables
@@ -262,6 +266,11 @@ class UserController extends Controller
     {
         $users = UserModel::select('user_id', 'username', 'nama', 'level_id')
             ->with('level');
+
+        // JS 7 praktikum 4 bagian 5
+        if ($request->level_id) {
+            $users->where('level_id', $request->level_id);
+        }
 
         return DataTables::of($users)
             ->addIndexColumn() // menambahkan kolom index / no urut (default nama kolom: DT_RowIndex)
