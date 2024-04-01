@@ -30,7 +30,7 @@
     <div class="wrapper">
         {{-- JS7 praktikum 1 bagian 10 --}}
         {{-- Navbar --}}
-        @include('layout.header')
+        @include('layouts.header')
         {{-- .Navbar --}}
 
         <!-- Main Sidebar Container -->
@@ -44,7 +44,7 @@
 
             {{-- JS7 praktikum 1 bagian 12 --}}
             {{-- Sidebar --}}
-            @include('layout.sidebar')
+            @include('layouts.sidebar')
             {{-- .Sidebar --}}
         </aside>
 
@@ -53,7 +53,7 @@
             <!-- Content Header (Page header) -->
             {{-- JS7 praktikum 1 bagian 13 --}}
             {{-- Breadcrumb --}}
-            @include('layout.breadcrumb')
+            @include('layouts.breadcrumb')
             {{-- .Breadcrumb --}}
 
             <!-- Main content -->
@@ -69,7 +69,7 @@
 
         {{-- JS7 praktikum 1 bagian 13 --}}
         {{-- Footer --}}
-        @include('layout.footer')
+        @include('layouts.footer')
         {{-- .Footer --}}
     </div>
     <!-- ./wrapper -->

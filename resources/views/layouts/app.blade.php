@@ -3,7 +3,7 @@
 {{-- Extend and customize the browser title --}}
 @section('title')
     {{ config('adminlte.title') }}
-    @hasSection('subtitle')
+    @hasSection('Subtitle')
         | @yield('subtitle')
     @endif
 @stop
@@ -17,9 +17,9 @@
     </ul>
 @stop --}}
 
-@section('')
+{{-- @section('')
     <p>p</p>
-@stop
+@stop --}}
 
 @vite('resources/js/app.js')
 

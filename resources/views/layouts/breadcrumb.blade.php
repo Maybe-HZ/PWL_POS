@@ -9,9 +9,9 @@
                 <ol class="breadcrumb float-sm-right">
                     @foreach ( $breadcrumb->list as $key => $value )
                         @if ($key == count($breadcrumb->list )-1)
-                            <li class="breadcrum-item active">{{$value}}</li>
+                            <li class="breadcrumb-item active">{{$value}}</li>
                         @else
-                            <li class="breadcrum-item">{{$value}}</li>
+                            <li class="breadcrumb-item"> <a href="">{{$value}}</a></li>
                         @endif
                     @endforeach
                 </ol>

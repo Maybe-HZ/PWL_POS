@@ -1,5 +1,5 @@
 {{-- JS7 praktikum 3 bagian 5 --}}
-@extends('layout.template')
+@extends('layouts.template')
 
 @section('content')
     <div class="card card-outline card-primary">
@@ -10,6 +10,12 @@
             </div>
         </div>
         <div class="card-body">
+            @if (session('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>
+            @endif
+            @if (session('error'))
+                <div class="alert alert-danger">{{ session('error') }}</div>
+            @endif
             <table class="table table-bordered table-striped table-hover table-sm" id="table_user">
                 <thead>
                     <tr>

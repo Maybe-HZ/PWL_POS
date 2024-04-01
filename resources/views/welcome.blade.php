@@ -1,5 +1,5 @@
 {{-- JS7 praktikum 2 bagian 2 --}}
-@extends('layout.template')
+@extends('layouts.template')
 
 @section('content')
 <div class="card">
