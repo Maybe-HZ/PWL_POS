@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Models;
+
 use App\Models\LevelModel;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class UserModel extends Model
+class UserModel extends \Illuminate\Foundation\Auth\User
 {
     use HasFactory;
     // pengentian Jobsheet 3 Praktikum 6 bagian 3
@@ -21,11 +22,12 @@ class UserModel extends Model
     // protected $fillable = ['level_id','username','nama'];
 
     // pengerjaan jobsheet 4 praktikum 2.4 bagian 4 untuk bisa mengerjakan
-    protected $fillable = ['level_id','username','nama','password'];
+    protected $fillable = ['level_id', 'username', 'nama', 'password'];
 
     // pengerjaan jobsheet 4 praktikum 2.7 bagian 1
-    public function level():BelongsTo
+    public function level(): BelongsTo
     {
         return $this->belongsTo(LevelModel::class, 'level_id', 'level_id');
     }
+
 }

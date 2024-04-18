@@ -62,7 +62,7 @@ Route::resource('m_user', POSController::class);
 
 // JS 7 Praktikum 3 bagian 3
 Route::group(['prefix' => 'user'], function () {
-    Route::get('/', [UserController::class, 'index']);                                // Menampilkan data user
+    Route::get('/', [UserController::class, 'index'])->name('user');                                // Menampilkan data user
     Route::post('/list', [UserController::class, 'list']);                       // menampilkan data user dalam bentukjson untuk datatables
     Route::get('/create', [UserController::class, 'create']);                  // menampilkan form tambah user
     Route::post('/', [UserController::class, 'store']);                         // menyimpan data user
@@ -73,7 +73,7 @@ Route::group(['prefix' => 'user'], function () {
 });
 
 Route::group(['prefix' => 'level'],function () {
-    Route::get('/', [LevelController::class, 'index']);
+    Route::get('/', [LevelController::class, 'index'])->name('level');
     Route::post('/list', [LevelController::class, 'list']);
     Route::get('/create', [LevelController::class, 'create']);
     Route::post('/', [LevelController::class, 'store']);
@@ -84,7 +84,7 @@ Route::group(['prefix' => 'level'],function () {
 });
 
 Route::group(['prefix' => 'kategori'],function () {
-    Route::get('/', [KategoriController::class, 'index']);
+    Route::get('/', [KategoriController::class, 'index'])->name('kategori');
     Route::post('/list', [KategoriController::class, 'list']);
     Route::get('/create', [KategoriController::class, 'create']);
     Route::post('/', [KategoriController::class, 'store']);
