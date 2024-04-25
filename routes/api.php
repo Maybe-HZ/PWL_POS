@@ -29,3 +29,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/user', App\Http\Controllers\Api\LoginController::class)->name('api.user');
+
+// Pengerjaan Jobsheet 10 praktikum 3 bagian 4
+Route::post
+('/logout', App\Http\Controllers\Api\LogoutController::class)->name('api.logout');
