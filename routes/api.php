@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\RegisterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\LevelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +32,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/user', App\Http\Controllers\Api\LoginController::class)->name('api.user');
 
 // Pengerjaan Jobsheet 10 praktikum 3 bagian 4
-Route::post
-('/logout', App\Http\Controllers\Api\LogoutController::class)->name('api.logout');
+Route::post('/logout', App\Http\Controllers\Api\LogoutController::class)->name('api.logout');
+
+// Pengerjaan Jobsheet 10 praktikum 4 bagian 3
+Route::get("levels",[LevelController::class,'index']);
+Route::post("levels",[LevelController::class,'store']);
+Route::get("levels/{level}",[LevelController::class,'show']);
+Route::put("levels/{level}",[LevelController::class,'update']);
+Route::delete("levels/{level}",[LevelController::class,'destroy']);
