@@ -81,12 +81,12 @@
                         data: "penjualan_kode",
                         className: "",
                         orderable: false,
-                        searchable: false,
+                        searchable: true
                     },{
                         data: "penjualan_tanggal",
                         className: "",
                         orderable: false,
-                        searchable: false,
+                        searchable: true,
                     },{
                         data: "aksi",
                         className: "",
