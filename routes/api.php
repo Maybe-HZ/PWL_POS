@@ -22,3 +22,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Pengerjaan Jobsheet 10 praktikum 1 bagian 10
 Route::post('/register', App\Http\Controllers\Api\RegisterController::class)->name('api.register');
+// Pengerjaan Jobsheet 10 praktikum 2 bagian 3
+Route::post('/login', App\Http\Controllers\Api\LoginController::class)->name('api.login');
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+Route::get('/user', App\Http\Controllers\Api\LoginController::class)->name('api.user');

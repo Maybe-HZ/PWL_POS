@@ -6,7 +6,7 @@ use App\Models\LevelModel;
 
 // use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-// use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
@@ -35,9 +35,9 @@ class UserModel extends Authenticatable implements JWTSubject
     protected $fillable = ['level_id', 'username', 'nama', 'password'];
 
     // pengerjaan jobsheet 4 praktikum 2.7 bagian 1
-    // public function level(): BelongsTo
-    // {
-    //     return $this->belongsTo(LevelModel::class, 'level_id', 'level_id');
-    // }
+    public function level(): BelongsTo
+    {
+        return $this->belongsTo(LevelModel::class, 'level_id', 'level_id');
+    }
 
 }
